@@ -15,3 +15,7 @@ div {
 .isActive {
   color: cadetblue;
 }
+#DrinksButton {
+  border: none;
+  background: none;
+}

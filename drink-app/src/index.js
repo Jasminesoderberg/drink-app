@@ -5,6 +5,7 @@ import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./Pages/Home";
 import Exporte from "./Pages/Explore";
+import ShowInfo from "./Components/ShowInfo";
 
 const routes = (
   <BrowserRouter>
@@ -13,6 +14,7 @@ const routes = (
         <Route path="/" component={Home} exact={true} />
         <Route path="/home" component={Home} />
         <Route path="/explore" component={Exporte} />
+        <Route path="/drinksInfo" component={ShowInfo} />
       </Switch>
     </div>
   </BrowserRouter>
