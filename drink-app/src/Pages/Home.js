@@ -1,5 +1,6 @@
 import React from "react";
 import "../Style/Home.css";
+import "../Style/Settings.css";
 import { NavLink } from "react-router-dom";
 import img from "../Images/CocktailsImg.jpg";
 

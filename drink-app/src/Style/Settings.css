@@ -1,0 +1,17 @@
+div {
+  position: relative;
+  text-align: center;
+  top: 2vw;
+}
+.HomeButton {
+  font-size: 1.5vw;
+  padding: 2vw;
+  text-decoration: none;
+}
+.ExploreButton {
+  font-size: 1.5vw;
+  text-decoration: none;
+}
+.isActive {
+  color: cadetblue;
+}

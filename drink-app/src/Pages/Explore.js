@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "../Style/Explore.css";
+import "../Style/Settings.css";
 
 const ExplorePage = () => {
   return (
