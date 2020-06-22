@@ -6,7 +6,12 @@ import img from "../Images/CocktailsImg.jpg";
 const HomePage = () => {
   return (
     <div>
-      <NavLink to="/" className="HomeButton" activeClassName="isActive">
+      <NavLink
+        to="/"
+        className="HomeButton"
+        activeClassName="isActive"
+        exact={true}
+      >
         Home
       </NavLink>
       <NavLink

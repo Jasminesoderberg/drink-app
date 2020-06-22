@@ -1,15 +1,28 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import "../Style/Explore.css";
 
 const ExplorePage = () => {
   return (
     <div>
-      <NavLink to="/" activeClassName="isActive">
+      <NavLink
+        to="/"
+        className="HomeButton"
+        activeClassName="isActive"
+        exact={true}
+      >
         Home
       </NavLink>
-      <NavLink to="/" activeClassName="isActive">
+      <NavLink
+        to="/explore"
+        className="ExploreButton"
+        activeClassName="isActive"
+      >
         Explore
       </NavLink>
+      <p id="Drink">Fin your favoutire drink!</p>
+      <input></input>
+      <button>Search</button>
     </div>
   );
 };
