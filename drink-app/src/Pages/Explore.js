@@ -1,20 +1,17 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import Button from "../Components/ButtonComponent";
 
-const ExporePage = () => {
+const ExplorePage = () => {
   return (
     <div>
       <NavLink to="/" activeClassName="isActive">
-        <Button title="Home" className="HomeButton" />
+        Home
       </NavLink>
-      <NavLink to="/explore" activeClassName="isActive">
-        <div>
-          <Button title="Explore" className="ExploreButton" />
-        </div>
+      <NavLink to="/" activeClassName="isActive">
+        Explore
       </NavLink>
     </div>
   );
 };
 
-export default ExporePage;
+export default ExplorePage;

@@ -3,15 +3,16 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import HomePage from "./Pages/Home";
-import ExporePage from "./Pages/Explore";
+import Home from "./Pages/Home";
+import Exporte from "./Pages/Explore";
 
 const routes = (
   <BrowserRouter>
     <div>
       <Switch>
-        <Route path="/" component={HomePage} exact={true} />
-        <Route path="/explore" component={ExporePage} />
+        <Route path="/" component={Home} exact={true} />
+        <Route path="/home" component={Home} />
+        <Route path="/explore" component={Exporte} />
       </Switch>
     </div>
   </BrowserRouter>

@@ -1,21 +1,24 @@
 import React from "react";
+import "../Style/Home.css";
 import { NavLink } from "react-router-dom";
-import Button from "../Components/ButtonComponent";
+import img from "../Images/CocktailsImg.jpg";
 
 const HomePage = () => {
   return (
     <div>
-      <NavLink to="/" activeClassName="isActive">
-        <div>
-          <Button title="Home" className="HomeButton" />
-        </div>
+      <NavLink to="/" className="HomeButton" activeClassName="isActive">
+        Home
       </NavLink>
-      <NavLink to="/explore" activeClassName="isActive">
-        <div>
-          <Button title="Explore" className="ExploreButton" />
-        </div>
+      <NavLink
+        to="/explore"
+        className="ExploreButton"
+        activeClassName="isActive"
+      >
+        Explore
       </NavLink>
-      <p>Welcome to The Cocktail Explorer</p>
+
+      <p id="Welcome">Welcome to The Cocktail Explorer!</p>
+      <img src={img} alt="ImgOfDrinks"></img>
     </div>
   );
 };
