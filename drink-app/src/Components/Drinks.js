@@ -11,7 +11,7 @@ const Drinks = () => {
           <button id="DrinksButton">
             <NavLink to="/drinksInfo">
               <div key={drinks.id}>
-                <p>Name: {drinks.name}</p>
+                <p>{drinks.name}</p>
                 <img
                   style={{ height: 200 }}
                   src={drinks.image}
