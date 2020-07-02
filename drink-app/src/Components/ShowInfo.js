@@ -1,19 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import Data from "../Data/drinks.json";
 
 const ShowInfo = () => {
-  return (
-    <div>
-      {Data.cocktails.map((drinks) => {
-        return (
-          <div key={drinks.id}>
-            <p>{drinks.name}</p>
-            <p>{drinks.preparation}</p>
-            <img style={{ height: 200 }} src={drinks.image} alt="drinks"></img>
-          </div>
-        );
-      })}
-    </div>
-  );
+  const [toggle, setToggle] = useState(false);
+
+  const fetchDrinks = Data.cocktails;
+
+  const showDrinks = () => {
+    fetchDrinks.name((drinks) => {
+      return (
+        <div>
+          <p>{drinks.name}</p>
+          <p>{drinks.preparation}</p>
+          <img style={{ height: 200 }} src={drinks.image} alt="drinks"></img>)
+        </div>
+      );
+    });
+  };
+
+  return <div>{showDrinks}</div>;
 };
 export default ShowInfo;
