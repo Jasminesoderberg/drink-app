@@ -3,3 +3,16 @@
   font-family: "Times New Roman", Times, serif;
   color: rgb(72, 201, 206);
 }
+#drinkText {
+  font-size: 3vw;
+}
+#commentBox {
+  width: 15vw;
+  display: inline-block;
+  background-color: rgb(72, 201, 206);
+  margin-right: 2vw;
+  border-radius: 3vw;
+}
+hr {
+  width: 14.8vw;
+}

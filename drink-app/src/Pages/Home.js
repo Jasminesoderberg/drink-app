@@ -1,6 +1,7 @@
 import React from "react";
 import "../Style/Home.css";
 import "../Style/Settings.css";
+
 import NavLinks from "../Components/NavLink";
 import img from "../Images/CocktailsImg.jpg";
 

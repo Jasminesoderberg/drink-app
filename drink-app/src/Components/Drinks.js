@@ -1,6 +1,5 @@
 import React from "react";
 import Data from "../Data/drinks.json";
-import ShowInfo from "../Components/ShowInfo";
 import { NavLink } from "react-router-dom";
 
 const Drinks = () => {

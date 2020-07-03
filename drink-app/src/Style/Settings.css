@@ -4,11 +4,13 @@ div {
   top: 2vw;
 }
 .HomeButton {
+  color: black;
   font-size: 1.5vw;
   padding: 2vw;
   text-decoration: none;
 }
 .ExploreButton {
+  color: black;
   font-size: 1.5vw;
   text-decoration: none;
 }

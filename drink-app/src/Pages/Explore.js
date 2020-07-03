@@ -11,6 +11,9 @@ const ExplorePage = () => {
   const [fileteredDrinks, setFilteredDrinks] = useState([]);
   const [toggle, setToggle] = useState(true);
   const [selectedDrink, setSelectedDrink] = useState();
+  const [comment, setComment] = useState([
+    { name: "jasmine", title: "hej", info: "super" },
+  ]);
 
   const fetchDrinks = Data.cocktails;
 
@@ -27,18 +30,25 @@ const ExplorePage = () => {
   }, [search, drinks]);
 
   const holdTheDrinks = () => {
-    return (
-      <div>
-        {fileteredDrinks.map((item, index) => (
-          <button id="DrinksButton" onClick={() => checkTrueOrFalse(index)}>
-            <div key={drinks.id}>
-              <p>{item.name}</p>
-              <img style={{ height: 200 }} src={item.image} alt="drinks"></img>
-            </div>
-          </button>
-        ))}
-      </div>
-    );
+    if (fileteredDrinks.length === 0) {
+      return <p id="drinkText"> The drink does not exist!</p>;
+    } else
+      return (
+        <div>
+          {fileteredDrinks.map((item, index) => (
+            <button id="DrinksButton" onClick={() => checkTrueOrFalse(index)}>
+              <div key={drinks.id}>
+                <p>{item.name}</p>
+                <img
+                  style={{ height: 200 }}
+                  src={item.image}
+                  alt="drinks"
+                ></img>
+              </div>
+            </button>
+          ))}
+        </div>
+      );
   };
 
   const checkTrueOrFalse = (selectedDrinks) => {
@@ -75,10 +85,74 @@ const ExplorePage = () => {
           alt="drinks"
         ></img>
         <br></br>
-        <button onClick={prevDrink}>Previous</button>
+        <button onClick={prevDrink} disabled={selectedDrink === 0}>
+          Previous
+        </button>
         <button onClick={reset}> Reset </button>
-        <button onClick={nextDrink}> Next </button>
+        <button
+          onClick={nextDrink}
+          disabled={selectedDrink === drinks.length - 1}
+        >
+          Next
+        </button>
+        <br></br>
+        <div>{commentsForm()}</div>
+        <div>{showComment()}</div>
       </div>
+    );
+  };
+
+  const addComment = (e) => {
+    const submitComment = {
+      name: e.target.elements.name.value,
+      title: e.target.elements.title.value,
+      info: e.target.elements.info.value,
+    };
+    e.preventDefault();
+    setComment([...comment, submitComment]);
+  };
+
+  const showComment = () => {
+    const timestamp = Date.now();
+
+    return comment.map((item, index) => {
+      return (
+        <div id="commentBox">
+          <p>By: {comment[index].name}</p>
+
+          <p>
+            {new Intl.DateTimeFormat("en-US", {
+              year: "numeric",
+              month: "2-digit",
+              day: "2-digit",
+              hour: "2-digit",
+              minute: "2-digit",
+            }).format(timestamp)}
+          </p>
+          <hr></hr>
+          <h3> {comment[index].title}</h3>
+          <p>{comment[index].info}</p>
+        </div>
+      );
+    });
+  };
+
+  const commentsForm = () => {
+    return (
+      <form onSubmit={addComment}>
+        <div>
+          <input name="name" type="text" placeholder="Your name" />
+        </div>
+        <div>
+          <input name="title" type="text" placeholder="Title" />
+        </div>
+        <div>
+          <input name="info" type="text" placeholder="Say something..." />
+        </div>
+        <br></br>
+        <br></br>
+        <input type="submit" value="Post" />
+      </form>
     );
   };
 
